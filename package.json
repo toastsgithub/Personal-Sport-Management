@@ -17,6 +17,16 @@
   },
   "homepage": "https://github.com/toastsgithub/Personal-Sport-Management#readme",
   "dependencies": {
-    "react": "^15.3.2"
+    "material-ui": "^0.16.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-tap-event-plugin": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.2"
   }
 }
