@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi~Match</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script src="../js/common-utils.js"></script>
+
+    <link rel="stylesheet" href="../css/navigator.css">
+
+    <link rel="stylesheet" href="../css/HiMatch.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <nav id="navigator" class="navbar navbar-default navbar-fixed-top" role="navigation" style="">
+            <div class="container-fluid">
+                <div class="navbar-header" style="">
+                    <img alt="Brand" src="../resource/image/smile.png" style="width: 50px;margin-right: 10px;">
+                    <span style="font-size: 25px;margin-right: 20px;">Hi  High</span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./HomePage.html">个人嗨</a></li>
+                        <li><a href="./HiMatch.html">嗨比赛</a></li>
+                        <!--<li><a href="#">嗨数据</a></li>-->
+                        <li><a href="./HiFriend.html">嗨友圈</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-bell"></span>消息</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Toast <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">个人中心</a></li>
+                                <li><a href="#">朋友</a></li>
+                                <!--<li><a href="#">Something else here</a></li>-->
+                                <!--<li class="divider"></li>-->
+                                <!--<li><a href="#">Separated link</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div id="content" class="row">
+            <div id="personal-info" class="col-lg-3 col-md-4 col-sm-5" style="padding: 0">
+                <div id="avatar" style="width: 100%">
+                    <img class="large-avatar" src="../resource/image/avatar.png" alt="">
+                </div>
+                <div id="user-info" class="centralize">
+                    <p style="font-size: 25px">
+                        Toast
+                    </p>
+                </div>
+                <div id="user-description" class="centralize">
+                    <p>
+                        I love sports ! ~
+                    </p>
+                </div>
+
+                <div id="switchs">
+                    <div class="btn-group-vertical" role="tablist" style="width: 200px;margin-left: auto;margin-right:auto;display: table;">
+                        <button type="button" class="btn btn-default" data-toggle="tab" href="#tab1">赛事列表</button>
+                        <button type="button" class="btn btn-default" data-toggle="tab" href="#tab2">我的比赛</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="match-info" class="col-lg-9 col-md-8 col-sm-7">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1">
+
+                            <!--<div class="col-sm-6 col-md-4">-->
+
+                        <div class="thumbnail match-instance" >
+                                    <img src="../resource/image/lion.png" alt="img" class="match-pic">
+                                    <div class="caption">
+                                        <h3>玄武湖马拉松</h3>
+                                        <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                                    </div>
+                                </div>
+                        <div class="thumbnail match-instance" >
+                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
+                            <div class="caption">
+                                <h3>玄武湖马拉松</h3>
+                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                            </div>
+                        </div>
+                        <div class="thumbnail match-instance" >
+                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
+                            <div class="caption">
+                                <h3>玄武湖马拉松</h3>
+                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                            </div>
+                        </div>
+                        <div class="thumbnail match-instance" >
+                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
+                            <div class="caption">
+                                <h3>玄武湖马拉松</h3>
+                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                            </div>
+                        </div>
+                        <div class="thumbnail match-instance" >
+                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
+                            <div class="caption">
+                                <h3>玄武湖马拉松</h3>
+                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                            </div>
+                        </div>
+
+                            <!--</div>-->
+                    </div>
+
+                    <div class="tab-pane fade in" id="tab2">
+
+                        <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
+                            <a class="media-left media-middle" href="#">
+                                <img src="../resource/image/lion.png" alt="..." class="my-match-img">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
+                                ...
+                            </div>
+                        </div>
+
+                        <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
+                            <a class="media-left media-middle" href="#">
+                                <img src="../resource/image/lion.png" alt="..." class="my-match-img">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
+                                ...
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+</body>
+
+<script>
+
+    //界面样板元素注入方法调用
+    document.getElementById("footer").appendChild(generate_footer());
+
+</script>
+</html>

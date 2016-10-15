@@ -1,0 +1,40 @@
+#personal-info{
+    height: 600px;
+    /*background-color: #2aabd2;*/
+}
+
+#match-info{
+    height: 1300px;
+    /*background-color: #1b6d85;*/
+}
+.large-avatar{
+    display: table;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#user-info{
+
+}
+
+#user-description{
+    border-bottom: solid 1px black;
+}
+
+.centralize{
+    width: 200px;
+    display: table;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#switchs{
+    width: 100%;
+    margin-top:30px;
+}
+
+.friend-icon{
+    width: 80px;
+}

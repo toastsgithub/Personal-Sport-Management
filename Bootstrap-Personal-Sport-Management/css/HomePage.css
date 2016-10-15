@@ -1,0 +1,50 @@
+body{
+
+}
+
+
+
+.Sports-type1{
+    color: #99CC33;
+    color: #FF6666;
+    color: #336699;
+}
+
+
+#personal-info{
+    height: 300px;
+    /*background-color: #2aabd2;*/
+}
+
+#sport-info{
+    height: 1300px;
+    /*background-color: #1b6d85;*/
+}
+.large-avatar{
+    display: table;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#user-info{
+
+}
+
+#user-description{
+border-bottom: solid 1px black;
+}
+
+.centralize{
+    width: 200px;
+    display: table;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/*显示结构*/
+/*#personal-info{ background-color: #1b6d85; }*/
+/*#sport-info{ background-color: #2b542c; }*/
+/*#avatar{ background-color: #3c3c3c; }*/
