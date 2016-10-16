@@ -10,59 +10,22 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
+
+    <script src="//cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.js"></script>
+    <link href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">
 
     <script src="../js/common-utils.js"></script>
 
-    <link rel="stylesheet" href="../css/navigator.css">
+
+    <!--<link rel="stylesheet" href="../css/navigator.css">-->
 
     <link rel="stylesheet" href="../css/HiMatch.css">
 
 </head>
 <body>
-    <div class="container-fluid">
-        <nav id="navigator" class="navbar navbar-default navbar-fixed-top" role="navigation" style="">
-            <div class="container-fluid">
-                <div class="navbar-header" style="">
-                    <img alt="Brand" src="../resource/image/smile.png" style="width: 50px;margin-right: 10px;">
-                    <span style="font-size: 25px;margin-right: 20px;">Hi  High</span>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
+    <div class="" id="navigator">
 
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="./HomePage.html">个人嗨</a></li>
-                        <li><a href="./HiMatch.html">嗨比赛</a></li>
-                        <!--<li><a href="#">嗨数据</a></li>-->
-                        <li><a href="./HiFriend.html">嗨友圈</a></li>
-
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-bell"></span>消息</a>
-                        </li>
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Toast <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">个人中心</a></li>
-                                <li><a href="#">朋友</a></li>
-                                <!--<li><a href="#">Something else here</a></li>-->
-                                <!--<li class="divider"></li>-->
-                                <!--<li><a href="#">Separated link</a></li>-->
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </div>
 
     <div class="container-fluid">
@@ -84,8 +47,8 @@
 
                 <div id="switchs">
                     <div class="btn-group-vertical" role="tablist" style="width: 200px;margin-left: auto;margin-right:auto;display: table;">
-                        <button type="button" class="btn btn-default" data-toggle="tab" href="#tab1">赛事列表</button>
-                        <button type="button" class="btn btn-default" data-toggle="tab" href="#tab2">我的比赛</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1">Match List</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2">My Match</button>
                     </div>
                 </div>
             </div>
@@ -94,45 +57,68 @@
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="tab1">
 
-                            <!--<div class="col-sm-6 col-md-4">-->
 
-                        <div class="thumbnail match-instance" >
-                                    <img src="../resource/image/lion.png" alt="img" class="match-pic">
-                                    <div class="caption">
-                                        <h3>玄武湖马拉松</h3>
-                                        <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+
+                        <!--<div class="thumbnail match-instance" >-->
+                            <!--<img src="../resource/image/lion.png" alt="img" class="match-pic">-->
+                            <!--<div class="caption">-->
+                                <!--<h3>玄武湖马拉松</h3>-->
+                                <!--<p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                            <div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">
+                                <div style="background: url('../resource/image/lion.png');height: 150px;width: 300px;background-repeat: repeat;background-size: 300px 150px;border-top-left-radius: 6px;border-top-right-radius: 6px"></div>
+                                <div style="padding: 8px;height: 200px">
+                                    <div style="font-size: 20px;border-bottom: solid 1px #b8bebf">Match on XuanWu Lake</div>
+                                    <div style="font-size: 15px;font-weight: 100">Here comes an interesting match which allows you to chanllenge your self !</div>
+                                </div>
+                                <div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">
+                                    <div style="float: right;">
+                                        <button class="btn btn-primary btn-embossed" style="width: 100px">
+                                            Join !
+                                        </button>
+                                        <button class="btn btn-default btn-embossed">
+                                            Info
+                                        </button>
                                     </div>
                                 </div>
-                        <div class="thumbnail match-instance" >
-                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
-                            <div class="caption">
-                                <h3>玄武湖马拉松</h3>
-                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                            </div>
+                            <div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">
+                            <div style="background: url('../resource/image/match1.jpg');height: 150px;width: 300px;background-repeat: repeat;background-size: 300px 150px;border-top-left-radius: 6px;border-top-right-radius: 6px"></div>
+                            <div style="padding: 8px;height: 200px">
+                                <div style="font-size: 20px;border-bottom: solid 1px #b8bebf">Jogging Night</div>
+                                <div style="font-size: 15px;font-weight: 100">Take nothing but your towel and let's Strengthen our body together !</div>
+                            </div>
+                            <div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">
+                                <div style="float: right;">
+                                    <button class="btn btn-primary btn-embossed" style="width: 100px">
+                                        Join !
+                                    </button>
+                                    <button class="btn btn-default btn-embossed">
+                                        Info
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="thumbnail match-instance" >
-                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
-                            <div class="caption">
-                                <h3>玄武湖马拉松</h3>
-                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                            <div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">
+                            <div style="background: url('../resource/image/match2.jpeg');height: 150px;width: 300px;background-repeat: repeat;background-size: 300px 150px;border-top-left-radius: 6px;border-top-right-radius: 6px"></div>
+                            <div style="padding: 8px;height: 200px">
+                                <div style="font-size: 20px;border-bottom: solid 1px #b8bebf">Cycle Track On JiangNing !</div>
+                                <div style="font-size: 15px;font-weight: 100">I don't think you, as a really bicycle lover, should miss this EXCITING match !</div>
                             </div>
-                        </div>
-                        <div class="thumbnail match-instance" >
-                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
-                            <div class="caption">
-                                <h3>玄武湖马拉松</h3>
-                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
-                            </div>
-                        </div>
-                        <div class="thumbnail match-instance" >
-                            <img src="../resource/image/lion.png" alt="img" class="match-pic">
-                            <div class="caption">
-                                <h3>玄武湖马拉松</h3>
-                                <p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>
+                            <div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">
+                                <div style="float: right;">
+                                    <button class="btn btn-primary btn-embossed" style="width: 100px">
+                                        Join !
+                                    </button>
+                                    <button class="btn btn-default btn-embossed">
+                                        Info
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
-                            <!--</div>-->
                     </div>
 
                     <div class="tab-pane fade in" id="tab2">
@@ -165,10 +151,11 @@
     <footer id="footer"></footer>
 </body>
 
+<script src="../js/flat-component-generator.js"></script>
 <script>
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
-
+    generate_nav_bar('#navigator');
 </script>
 </html>

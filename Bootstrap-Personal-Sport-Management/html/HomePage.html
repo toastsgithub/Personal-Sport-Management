@@ -11,69 +11,70 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
 
+    <script src="//cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.js"></script>
+    <link href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">
     <!--high chart-->
     <!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <!--<script src="//cdn.bootcss.com/highstock/5.0.0/highstock-all.js"></script>-->
-    <!--<script src="../js/bootstrap.js"></script>-->
-    <!--<link rel="stylesheet" href="../css/bootstrap.css">-->
+
     <link rel="stylesheet" href="../css/HomePage.css">
-    <link rel="stylesheet" href="../css/navigator.css">
+    <!--<link rel="stylesheet" href="../css/navigator.css">-->
     <script src="../js/HomePage.js"></script>
 
     <!--<script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>-->
 
     <script src="../js/common-utils.js"></script>
+
     <!--<link rel="stylesheet" href="../css/bootstrap-theme.css">-->
 
 
 </head>
 <body>
-    <div class="container-fluid">
-        <nav id="navigator" class="navbar navbar-default navbar-fixed-top" role="navigation" style="">
-        <div class="container-fluid">
-            <div class="navbar-header" style="">
-                <img alt="Brand" src="../resource/image/smile.png" style="width: 50px;margin-right: 10px;">
-                    <span style="font-size: 25px;margin-right: 20px;margin-top: auto;margin-bottom: auto;">Hi  High</span>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+    <div class="" id="navigator">
+        <!--<nav id="navigator" class="navbar navbar-default navbar-fixed-top" role="navigation" style="">-->
+        <!--<div class="container-fluid">-->
+            <!--<div class="navbar-header" style="">-->
+                <!--<img alt="Brand" src="../resource/image/smile.png" style="width: 50px;margin-right: 10px;">-->
+                    <!--<span style="font-size: 25px;margin-right: 20px;margin-top: auto;margin-bottom: auto;">Hi  High</span>-->
+                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+                    <!--<span class="sr-only">Toggle navigation</span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
+            <!--</div>-->
 
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="./HomePage.html">个人嗨</a></li>
-                    <li><a href="./HiMatch.html">嗨比赛</a></li>
-                    <!--<li><a href="#">嗨数据</a></li>-->
-                    <li><a href="./HiFriend.html">嗨友圈</a></li>
+            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li><a href="./HomePage.html">个人嗨</a></li>-->
+                    <!--<li><a href="./HiMatch.html">嗨比赛</a></li>-->
+                    <!--&lt;!&ndash;<li><a href="#">嗨数据</a></li>&ndash;&gt;-->
+                    <!--<li><a href="./HiFriend.html">嗨友圈</a></li>-->
 
-                </ul>
+                <!--</ul>-->
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-bell"></span>消息</a>
-                    </li>
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li>-->
+                        <!--<a href="#"><span class="glyphicon glyphicon-bell"></span>消息</a>-->
+                    <!--</li>-->
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Toast <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">个人中心</a></li>
-                            <li><a href="#">朋友</a></li>
-                            <!--<li><a href="#">Something else here</a></li>-->
-                            <!--<li class="divider"></li>-->
-                            <!--<li><a href="#">Separated link</a></li>-->
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                    <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Toast <span class="caret"></span></a>-->
+                        <!--<ul class="dropdown-menu" role="menu">-->
+                            <!--<li><a href="#">个人中心</a></li>-->
+                            <!--<li><a href="#">朋友</a></li>-->
+                            <!--&lt;!&ndash;<li><a href="#">Something else here</a></li>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<li><a href="#">Separated link</a></li>&ndash;&gt;-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
     </div>
     <div class="container-fluid">
         <div id="content" class="row">
@@ -95,15 +96,15 @@
 
             <div id="sport-info" class="col-lg-9 col-md-8 col-sm-7">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="tab" class="active"><a href="#tab1" data-toggle="tab">今日步数(没事甩手机)</a></li>
-                    <li role="tab"><a href="#tab2" data-toggle="tab">体重(又胖了)</a></li>
-                    <li role="tab"><a href="#tab3" data-toggle="tab">睡眠(好好睡觉)</a></li>
-                    <li role="tab"><a href="#tab4" data-toggle="tab">身体管理</a></li>
+                    <li role="tab" class="active"><a href="#tab1" data-toggle="tab">Steps</a></li>
+                    <li role="tab"><a href="#tab2" data-toggle="tab">Weight</a></li>
+                    <li role="tab"><a href="#tab3" data-toggle="tab">Sleep</a></li>
+                    <li role="tab"><a href="#tab4" data-toggle="tab">Body</a></li>
                 </ul>
                 <div class="tab-content" >
 
                     <div class="tab-pane fade in active" id="tab1">
-                        <p>今日步数：65535</p>
+                        <p>The steps of today is：65535</p>
                         <div>
                             <div id="step_bar_chart">
 
@@ -170,12 +171,12 @@
     </div>
     <footer id="footer"></footer>
 </body>
-
+<script src="../js/flat-component-generator.js"></script>
 <script>
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
-
+    generate_nav_bar('#navigator');
 </script>
 
 </html>

@@ -10,11 +10,14 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
+
+    <script src="//cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.js"></script>
+    <link href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">
 
     <script src="../js/common-utils.js"></script>
 
-    <link rel="stylesheet" href="../css/navigator.css">
+    <!--<link rel="stylesheet" href="../css/navigator.css">-->
 
     <link rel="stylesheet" href="../css/HiFriend.css">
 </head>
@@ -83,8 +86,8 @@
                 </div>
                 <div id="switchs">
                     <div class="btn-group-vertical" role="tablist" style="width: 200px;margin-left: auto;margin-right:auto;display: table;">
-                        <button type="button" class="btn btn-default" data-toggle="tab" href="#tab1">关注的人</button>
-                        <button type="button" class="btn btn-default" data-toggle="tab" href="#tab2">我的粉丝</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1">Following</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2">Follower</button>
                     </div>
                 </div>
             </div>
@@ -94,17 +97,41 @@
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="tab1">
                         <div class="container-fluid">
-                            <div class="" style="background-color: #1b6d85">
-                                <div class="" style="background-color: #cc7d41;float: left;">
-                                    <img src="../resource/image/avatar1.png" alt="..." class="img-thumbnail friend-icon">
+
+                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
+                                <div class="" style="float: left;">
+                                    <div><img src="../resource/image/avatar1.png" alt="..." class="img-circle friend-icon"></div>
+                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;">Unfollow</button>
                                 </div>
 
-                                <div style="background-color: rebeccapurple;width: 100%;" class="">
-                                    <h4 class="media-heading">孙浩大哥</h4>
-                                    我是个gay...
-                                    <button class="btn btn-default" style="float: right;">取消关注</button>
+                                <div style="float: left;" class="">
+                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother</h4></a>
+                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
                                 </div>
                             </div>
+                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
+                                <div class="" style="float: left;">
+                                    <div><img src="../resource/image/avatar2.png" alt="..." class="img-circle friend-icon"></div>
+                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;">Unfollow</button>
+                                </div>
+
+                                <div style="float: left;" class="">
+                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother De Xiaohao1</h4></a>
+                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
+                                </div>
+                            </div>
+                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
+                                <div class="" style="float: left;">
+                                    <div><img src="../resource/image/avatar3.png" alt="..." class="img-circle friend-icon"></div>
+                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;">Unfollow</button>
+                                </div>
+
+                                <div style="float: left;" class="">
+                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother 3 beta</h4></a>
+                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -119,10 +146,11 @@
     <footer id="footer">
     </footer>
 </body>
+<script src="../js/flat-component-generator.js"></script>
 <script>
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
-
+    generate_nav_bar('#navigator');
 </script>
 </html>

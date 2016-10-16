@@ -17,7 +17,7 @@ body{
 }
 
 #sport-info{
-    height: 1300px;
+    /*height: 1300px;*/
     /*background-color: #1b6d85;*/
 }
 .large-avatar{
@@ -42,7 +42,9 @@ border-bottom: solid 1px black;
     margin-left:auto;
     margin-right:auto;
 }
-
+.navbar-default{
+    /*background-color: #996600;*/
+}
 
 /*显示结构*/
 /*#personal-info{ background-color: #1b6d85; }*/
