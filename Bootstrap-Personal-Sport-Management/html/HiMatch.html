@@ -19,6 +19,9 @@
 
 
     <!--<link rel="stylesheet" href="../css/navigator.css">-->
+    <script src="../js/jquery-lang.js"></script>
+    <script src="../js/js.cookie.js"></script>
+    <script src="../js/language-control.js"></script>
 
     <link rel="stylesheet" href="../css/HiMatch.css">
 
@@ -47,8 +50,8 @@
 
                 <div id="switchs">
                     <div class="btn-group-vertical" role="tablist" style="width: 200px;margin-left: auto;margin-right:auto;display: table;">
-                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1">Match List</button>
-                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2">My Match</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1" lang="en">Match List</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2" lang="en">My Match</button>
                     </div>
                 </div>
             </div>
@@ -75,10 +78,10 @@
                                 </div>
                                 <div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">
                                     <div style="float: right;">
-                                        <button class="btn btn-primary btn-embossed" style="width: 100px">
+                                        <button class="btn btn-primary btn-embossed" style="width: 100px" lang="en">
                                             Join !
                                         </button>
-                                        <button class="btn btn-default btn-embossed">
+                                        <button class="btn btn-info btn-embossed" onclick="show_match_detail()" lang="en">
                                             Info
                                         </button>
                                     </div>
@@ -148,6 +151,35 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="match-detail">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Match Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="media">
+                        <a class="media-left" href="#">
+                            <img src="../resource/image/lion.png" alt="..." style="width: 300px">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Match on XuanWu Lake</h4>
+                            <div>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
+                            <div><span class="glyphicon glyphicon-time"></span> Date: <span id="match_time">2016-10-17</span></div>
+                            <div><span class="glyphicon glyphicon-road"></span> Place: <span id="match_place">Xuan Wu Lake</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-embossed">Join now !</button>
+                    <button type="button" class="btn btn-danger btn-embossed" data-dismiss="modal">Fuck off</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <footer id="footer"></footer>
 </body>
 
@@ -157,5 +189,9 @@
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
     generate_nav_bar('#navigator');
+
+    function show_match_detail() {
+        $('#match-detail').modal();
+    }
 </script>
 </html>

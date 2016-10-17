@@ -1,0 +1,20 @@
+{
+  "token":{
+    "My Profile":"我的运动",
+    "Playground":"比赛场",
+    "Friends":"朋友圈",
+    "Steps":"步数",
+    "Weight":"体重",
+    "Sleep":"睡眠",
+    "Body":"身体管理",
+    "Join !":"参加",
+    "Info":"具体信息",
+    "Match List":"比赛列表",
+    "My Match":"我的比赛",
+    "Following":"我关注的",
+    "Follower":"粉丝",
+    "Unfollow":"取消关注",
+    "Setting":"设置",
+    "Log out":"退出"
+  }
+}

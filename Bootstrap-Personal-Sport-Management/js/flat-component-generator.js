@@ -13,9 +13,9 @@ function generate_nav_bar(node_id) {
 
         '<div class="collapse navbar-collapse" id="navbar-collapse-01">'+
         '<ul class="nav navbar-nav navbar-left">'+
-            '<li><a href="../html/HomePage.html">My Profile</a></li>'+
-            '<li><a href="../html/HiMatch.html">Playground</a></li>'+
-            '<li><a href="../html/HiFriend.html">Friends</a></li>'+
+            '<li><a href="../html/HomePage.html" lang="en">My Profile</a></li>'+
+            '<li><a href="../html/HiMatch.html" lang="en">Playground</a></li>'+
+            '<li><a href="../html/HiFriend.html" lang="en">Friends</a></li>'+
         '</ul>'+
         '<ul class="nav navbar-nav navbar-right">'+
             '<li class="dropdown">'+
@@ -23,6 +23,10 @@ function generate_nav_bar(node_id) {
                 '<span class="dropdown-arrow"></span>'+
                 '<ul class="dropdown-menu">'+
                     '<li><a href="#">个人设置</a></li>'+
+                    '<li class="divider"></li>'+
+                    '<li><a href="#" onclick="change_to_En()">English</a></li>'+
+                    '<li><a href="#" onclick="change_to_Chinese()">简体中文</a></li>'+
+                    '<li><a href="#" onclick="change_to_yn_dialect()">云南方言</a></li>'+
                     '<li class="divider"></li>'+
                     '<li><a href="#">退出登录</a></li>'+
                 '</ul>'+
