@@ -25,6 +25,13 @@
 
     <link rel="stylesheet" href="../css/HiMatch.css">
 
+    <!--date picker-->
+    <script src="../js/date_picker/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="../js/date_picker/bootstrap-datetimepicker.min.css">
+
+    <script src="../js/date_picker/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="../js/date_picker/flatpickr.min.css">
+
 </head>
 <body>
     <div class="" id="navigator">
@@ -50,26 +57,16 @@
 
                 <div id="switchs">
                     <div class="btn-group-vertical" role="tablist" style="width: 200px;margin-left: auto;margin-right:auto;display: table;">
-                        <button class="btn btn-primary btn-embossed">Raise A Match</button>
-                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1" lang="en">Match List</button>
-                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2" lang="en">My Match</button>
+                        <button class="btn btn-primary btn-embossed" onclick="show_match_create_modal()">Raise A Match</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#match_list" lang="en">Match List</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#my_match" lang="en">My Match</button>
                     </div>
                 </div>
             </div>
 
             <div id="match-info" class="col-lg-9 col-md-8 col-sm-7">
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="tab1">
-
-
-
-                        <!--<div class="thumbnail match-instance" >-->
-                            <!--<img src="../resource/image/lion.png" alt="img" class="match-pic">-->
-                            <!--<div class="caption">-->
-                                <!--<h3>玄武湖马拉松</h3>-->
-                                <!--<p><a href="#" class="btn btn-primary" role="button">参加</a> <a href="#" class="btn btn-default" role="button">详情</a></p>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <div class="tab-pane fade in active" id="match_list">
 
                         <!--Mock Matchs-->
                             <div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">
@@ -126,34 +123,88 @@
 
                     </div>
 
-                    <div class="tab-pane fade in" id="tab2">
+                    <div class="tab-pane fade in" id="my_match">
 
-                        <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
-                            <a class="media-left media-middle" href="#">
-                                <img src="../resource/image/lion.png" alt="..." class="my-match-img">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
-                                ...
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="tab"  class="active"><a data-toggle="tab" href="#match_participated">Participated</a></li>
+                            <li role="tab" ><a data-toggle="tab" href="#match_created">Created</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active " id="match_participated">
+                                <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
+                                    <a class="media-left media-middle" href="#">
+                                        <img src="../resource/image/lion.png" alt="..." class="my-match-img">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
+                                        ...
+                                    </div>
+                                </div>
+                                <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
+                                    <a class="media-left media-middle" href="#">
+                                        <img src="../resource/image/lion.png" alt="..." class="my-match-img">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
+                                        ...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in " id="match_created">
+
                             </div>
                         </div>
-
-                        <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
-                            <a class="media-left media-middle" href="#">
-                                <img src="../resource/image/lion.png" alt="..." class="my-match-img">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
-                                ...
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="create_match">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>-->
+                            <h4 class="modal-title">Create A New Match</h4>
+                        </div>
+                        <div class="modal-body container-fluid">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="../resource/image/lion.png" alt="" style="width: 80px">
+                                </div>
+                                <div id="info_panel" class="col-lg-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                                        <input type="text" class="form-control" placeholder="Match Title">
+                                    </div>
+                                    <div class="input-group"style="margin-top:10px;">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
+                                        <input type="text" class="form-control" placeholder="Match Location">
+                                    </div>
+                                    <div class="input-group"style="margin-top:10px; cursor: pointer">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
+                                        <input type="text" class="form-control" placeholder="Choose date here" id="match-date-input" style="cursor: pointer;color: #000000;background-color: #ffffff">
+                                    </div>
+                                    <div class="input-group"style="margin-top:10px; cursor: pointer">
+                                        <textarea name="" id="" cols="90" rows="10" class="form-control" style="resize: none" placeholder="Please add a brief description of your match here ..."></textarea>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-embossed">Create!</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
         </div>
     </div>
-    <!--match detail-->
+
+    <!--MODAL of match detail-->
     <div class="modal fade" id="match-detail">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -190,10 +241,23 @@
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
+//    $("#match-date-input").datetimepicker({
+//        autoclose:true,
+//        todayBtn:true
+//    });
+
+
+    $("#match-date-input").flatpickr();
     generate_nav_bar('#navigator');
 
     function show_match_detail() {
         $('#match-detail').modal();
     }
+    function show_match_create_modal() {
+        $("#create_match").modal({
+            backdrop:"static"
+        });
+    }
+
 </script>
 </html>
