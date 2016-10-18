@@ -8,6 +8,7 @@ npm-debug.log
 
 # IDEA
 /.idea/
+/.idea/workspace.xml
 
 # dist
 /dist/
