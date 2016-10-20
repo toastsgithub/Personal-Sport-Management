@@ -32,6 +32,10 @@
     <script src="../js/date_picker/flatpickr.min.js"></script>
     <link rel="stylesheet" href="../js/date_picker/flatpickr.min.css">
 
+    <!--File input-->
+    <script src="../js/file_input/fileinput.min.js"></script>
+    <link rel="stylesheet" href="../js/file_input/fileinput.min.css">
+    <link rel="stylesheet" href="../js/file_input/themes/fa/theme.js">
 </head>
 <body>
     <div class="" id="navigator">
@@ -168,10 +172,11 @@
                         </div>
                         <div class="modal-body container-fluid">
                             <div class="row">
-                                <div class="col-lg-2">
-                                    <img src="../resource/image/lion.png" alt="" style="width: 80px">
+                                <div class="col-lg-4">
+                                    <!--<img src="../resource/image/lion.png" alt="" style="width: 80px">-->
+                                    <input id="pic_upload" type="file"/>
                                 </div>
-                                <div id="info_panel" class="col-lg-10">
+                                <div id="info_panel" class="col-lg-8">
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
                                         <input type="text" class="form-control" placeholder="Match Title">
@@ -249,7 +254,7 @@
 
     $("#match-date-input").flatpickr();
     generate_nav_bar('#navigator');
-
+    $("#pic_upload").fileinput({theme:'fa'});
     function show_match_detail() {
         $('#match-detail').modal();
     }

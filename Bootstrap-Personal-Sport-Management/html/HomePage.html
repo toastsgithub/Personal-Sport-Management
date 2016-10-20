@@ -110,17 +110,51 @@
                 <div class="tab-content" >
 
                     <div class="tab-pane fade in active" id="tab1">
-                        <p>The steps of today is：65535</p>
-                        <div>
-                            <div id="step_bar_chart">
+                        <div class="container-fluid" style="padding: 0">
+                            <div class="col-lg-3 col-md-3 col-sm-12" style="padding-top: 10px">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Steps Data
+                                    </div>
+                                    <div class="panel-body">
+                                        The steps of today is：65535
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-12" style="padding-top: 10px;">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Steps Data
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="step_bar_chart">
 
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="tab-pane fade in" id="tab2">
-                        <p>今日体重：65535</p>
-                        <div id="weight_line_chart"></div>
+
+                        <div class="container-fluid" style="margin-top:10px;">
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <strong>Warning!</strong> Better check your weight, your weight keep increasing in last 5 days !
+                            </div>
+                            <div class="row">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Weight Data
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="weight_line_chart"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
                     <div class="tab-pane fade in" id="tab3">

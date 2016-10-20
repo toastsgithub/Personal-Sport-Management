@@ -30,6 +30,7 @@ function draw_step_bar_chart() {
                 series: [{
                     type: 'column',
                     name: '今日步数',
+                    color:'#666666',
                     data: data,
                     dataGrouping: {
                         units: [[

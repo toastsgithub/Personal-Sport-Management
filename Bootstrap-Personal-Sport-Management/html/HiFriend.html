@@ -15,11 +15,14 @@
     <script src="//cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.js"></script>
     <link href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">
 
+    <script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>
+
     <script src="../js/common-utils.js"></script>
 
     <script src="../js/jquery-lang.js"></script>
     <script src="../js/js.cookie.js"></script>
     <script src="../js/language-control.js"></script>
+    <script src="../js/HiFriend.js"></script>
 
     <!--<link rel="stylesheet" href="../css/navigator.css">-->
 
@@ -90,6 +93,7 @@
                 </div>
                 <div id="switchs">
                     <div class="btn-group-vertical" role="tablist" style="width: 200px;margin-left: auto;margin-right:auto;display: table;">
+                        <button type="button" class="btn btn-primary btn-embossed" onclick="show_search_friends_dialog()">Search Friends</button>
                         <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1">Following</button>
                         <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2">Follower</button>
                     </div>
@@ -140,15 +144,67 @@
                     </div>
 
                     <div class="tab-pane fade in" id="tab2">
-                        tab2
+                        Oops  !  Seems that you don't have any friends ~
                     </div>
                 </div>
 
             </div>
+
+            <div class="modal fade" id="search_friends_dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Search friends</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-primary" type="button">search</button>
+                                </span>
+                            </div>
+                            <div class="search_result">
+                                <div><a href="">John Smith(search result test)</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
+                                <div><a href="">Laurence</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
+                                <div><a href="">Steve Jobs</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
         </div>
     </div>
     <footer id="footer">
     </footer>
+    <div class="modal fade" id="friend_info">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">John Smith</h4>
+                </div>
+                <div class="modal-body">
+                    hello world
+                    <!--<div class="container-fluid">-->
+                    <!--<div class="row">-->
+                    <!--<div id="friend_avatar" class="col-lg-4">-->
+                    <!--<img src="../resource/image/avatar1.png" alt="" class="img-circle" style="width: 100px">-->
+                    <!--</div>-->
+                    <!--<div id="friend_detail" class="col-lg-8"></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 </body>
 <script src="../js/flat-component-generator.js"></script>
 <script>
@@ -156,5 +212,6 @@
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
     generate_nav_bar('#navigator');
+
 </script>
 </html>
