@@ -1,0 +1,13 @@
+# WINDOWS
+
+# NODE
+npm-debug.log
+/node_modules/
+# GIT
+#.gitignore
+
+# IDEA
+/.idea/
+
+# dist
+/dist/

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi~Friends</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
+
+    <!--<script src="//cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.js"></script>-->
+    <!--<link href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">-->
+    <script src="../js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/flat-ui.min.css">
+
+    <script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>
+
+    <script src="../js/common-utils.js"></script>
+
+    <script src="../js/jquery-lang.js"></script>
+    <script src="../js/js.cookie.js"></script>
+    <script src="../js/language-control.js"></script>
+    <script src="../js/HiFriend.js"></script>
+
+    <!--<link rel="stylesheet" href="../css/navigator.css">-->
+
+    <link rel="stylesheet" href="../css/HiFriend.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav id="navigator" class="navbar navbar-default navbar-fixed-top" role="navigation" style="">
+            <div class="container-fluid">
+                <div class="navbar-header" style="">
+                    <img alt="Brand" src="../resource/image/smile.png" style="width: 50px;margin-right: 10px;">
+                    <span style="font-size: 25px;margin-right: 20px;">Hi  High</span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./HomePage.html">个人嗨</a></li>
+                        <li><a href="./HiMatch.html">嗨比赛</a></li>
+                        <!--<li><a href="#">嗨数据</a></li>-->
+                        <li><a href="./HiFriend.html">嗨友圈</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-bell"></span>消息</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Toast <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">个人中心</a></li>
+                                <li><a href="#">朋友</a></li>
+                                <!--<li><a href="#">Something else here</a></li>-->
+                                <!--<li class="divider"></li>-->
+                                <!--<li><a href="#">Separated link</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <div class="container-fluid">
+        <div id="content" class="row">
+            <div id="personal-info" class="col-lg-3 col-md-4 col-sm-5" style="padding: 0">
+                <div id="avatar" style="width: 100%">
+                    <img class="large-avatar" src="../resource/image/avatar.png" alt="">
+                </div>
+                <div id="user-info" class="centralize">
+                    <p style="font-size: 25px">
+                        Toast
+                    </p>
+                </div>
+                <div id="user-description" class="centralize">
+                    <p>
+                        I love sports ! ~
+                    </p>
+                </div>
+                <div id="switchs">
+                    <div class="btn-group-vertical" role="tablist" style="width: 200px;margin-left: auto;margin-right:auto;display: table;">
+                        <button type="button" class="btn btn-primary btn-embossed" onclick="show_search_friends_dialog()">Search Friends</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1">Following</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2">Follower</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sport-info" class="col-lg-9 col-md-8 col-sm-7">
+
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1">
+                        <div class="container-fluid">
+
+                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
+                                <div class="" style="float: left;">
+                                    <div><img src="../resource/image/avatar1.png" alt="..." class="img-circle friend-icon"></div>
+                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;" lang="en">Unfollow</button>
+                                </div>
+
+                                <div style="float: left;" class="">
+                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother</h4></a>
+                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
+                                </div>
+                            </div>
+                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
+                                <div class="" style="float: left;">
+                                    <div><img src="../resource/image/avatar2.png" alt="..." class="img-circle friend-icon"></div>
+                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;"lang="en">Unfollow</button>
+                                </div>
+
+                                <div style="float: left;" class="">
+                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother De Xiaohao1</h4></a>
+                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
+                                </div>
+                            </div>
+                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
+                                <div class="" style="float: left;">
+                                    <div><img src="../resource/image/avatar3.png" alt="..." class="img-circle friend-icon"></div>
+                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;" lang="en">Unfollow</button>
+                                </div>
+
+                                <div style="float: left;" class="">
+                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother 3 beta</h4></a>
+                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade in" id="tab2">
+                        Oops  !  Seems that you don't have any friends ~
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal fade" id="search_friends_dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Search friends</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-primary" type="button">search</button>
+                                </span>
+                            </div>
+                            <div class="search_result">
+                                <div><a href="">John Smith(search result test)</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
+                                <div><a href="">Laurence</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
+                                <div><a href="">Steve Jobs</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
+        </div>
+    </div>
+    <footer id="footer">
+    </footer>
+    <div class="modal fade" id="friend_info">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">John Smith</h4>
+                </div>
+                <div class="modal-body">
+                    hello world
+                    <!--<div class="container-fluid">-->
+                    <!--<div class="row">-->
+                    <!--<div id="friend_avatar" class="col-lg-4">-->
+                    <!--<img src="../resource/image/avatar1.png" alt="" class="img-circle" style="width: 100px">-->
+                    <!--</div>-->
+                    <!--<div id="friend_detail" class="col-lg-8"></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</body>
+<script src="../js/flat-component-generator.js"></script>
+<script>
+
+    //界面样板元素注入方法调用
+    document.getElementById("footer").appendChild(generate_footer());
+    generate_nav_bar('#navigator');
+
+</script>
+</html>
