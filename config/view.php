@@ -14,7 +14,9 @@ return [
     */
 
     'paths' => [
-        realpath(base_path('resources/views')),
+//        realpath(base_path('resources/views')),
+//        realpath(base_path('resources/views/Bootstrap-Personal-Sport-Management/html'))
+        realpath(base_path('public/html'))
     ],
 
     /*

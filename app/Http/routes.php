@@ -13,7 +13,11 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+//    View::addExtendsion('html','php');
+//    return view('welcome');
+    \View::addExtension('html','php');
+    return view('HiMatch');
+//    return "hello Home page";
 });
 
 Route::any('/test',function (){
