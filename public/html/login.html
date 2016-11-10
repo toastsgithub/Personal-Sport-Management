@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="../js/flat-ui.min.js"></script>
+
+    <link rel="stylesheet" href="../css/flat-ui.min.css">
+
+    <script src="../js/common-utils.js"></script>
+
+    <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/core-min.js"></script>
+    <script src="//cdn.bootcss.com/crypto-js/3.1.2/components/md5-min.js"></script>
+
+
+    <script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>
+
+</head>
+
+<body style="margin-top: 100px;">
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-embossed" role="navigation" >
+    <div class="navbar-header" style="">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand" href="#">Hi High</a>
+    </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-01">
+
+        </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div style="width: 400px;display: table; margin-left: auto; margin-right: auto;">
+            <div class="input-group">
+                <span class="input-group-addon "><span class="glyphicon glyphicon-user"></span></span>
+                <input type="text" class="form-control" placeholder="Username" id="username">
+            </div>
+
+            <div class="input-group" style="margin-top: 10px">
+                <span class="input-group-addon "><span class="glyphicon glyphicon-lock"></span></span>
+                <input type="password" class="form-control" placeholder="Password" id="password">
+
+            </div>
+            <button class="btn btn-primary btn-embossed" style="width: 400px;margin-top: 10px;" onclick="auth()">LOGIN</button>
+            <div style="width: 400px;background-color: #00a1cb">
+                <p style="float: right;">Don't have a account?     <a onclick="raiseRegister()" style="cursor:pointer;">REGISTER</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="register">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Register</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div id="reserverd-part" class="col-lg-3">
+
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="input-group">
+                                <span class="input-group-addon "><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" class="form-control" placeholder="Username" id="register-username">
+                            </div>
+
+                            <div class="input-group" style="margin-top: 10px">
+                                <span class="input-group-addon "><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" class="form-control" placeholder="Password" id="register-password">
+                            </div>
+
+                            <div class="input-group" style="margin-top: 10px">
+                                <span class="input-group-addon "><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" class="form-control" placeholder="Password Confirm" id="register-password-confirm">
+                            </div>
+
+                            <div class="input-group" style="margin-top: 10px">
+                                <span class="input-group-addon "><span class="glyphicon glyphicon-envelope"></span></span>
+                                <input type="text" class="form-control" placeholder="E-mail" id="email">
+                            </div>
+
+                            <div class="input-group" style="margin-top: 10px">
+                                <span class="input-group-addon "><span class="glyphicon glyphicon-home"></span></span>
+                                <input type="text" class="form-control" placeholder="City (optional)" id="city">
+                            </div>
+
+                            <div class="input-group" style="margin-top: 10px">
+                                <span class="input-group-addon "><span class="glyphicon glyphicon-adjust"></span></span>
+                                <input type="text" class="form-control" placeholder="Gender (optional)" id="gender">
+                            </div>
+
+                            <div class="input-group" style="margin-top: 10px">
+                                <span class="input-group-addon "><span class="glyphicon glyphicon-flag"></span></span>
+                                <input type="text" class="form-control" placeholder="Age (optional)" id="age">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id='new_user_success' class="alert alert-success" role="alert" style="visibility: hidden">Welcome to join us !</div>
+                <div id='new_user_error' class="alert alert-danger" role="alert" style="visibility: hidden"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"onclick="clearAll()">ClearAll</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="register();">Register!</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<footer id="footer" class="navbar-fixed-bottom"></footer>
+</body>
+<script>
+    document.getElementById('footer').appendChild(generate_footer());
+    function auth() {
+        var username = $("#username").val();
+        var password =$("#password").val();
+        if (username == ''){
+            console.log("empty username");
+            return ;
+        }else if (password == ''){
+            console.log("empty password");
+            return ;
+        }
+
+        password = CryptoJS.MD5(password).toString();
+        console.log("username: "+username+ "password:"+password);
+
+        $.ajax({
+            url:'/login',
+            type:'post',
+            data:{username:username,password:password},
+            success:function (data) {
+                console.log("success:"+data);
+                if ( data.result == 1 ){
+                    setCookie('hiname',data.user.username,1);
+                    setCookie('hinameid',data.user.id,1);
+
+                    window.location.href = '/sport_data_page';
+                }else{
+                    // TODO invalid user
+                }
+
+            },
+            error:function (data) {
+                console.log("error:"+JSON.stringify(data));
+            }
+        });
+    }
+    function raiseRegister() {
+        $('#register').modal();
+    }
+    function register() {
+        var username = $('#register-username').val();
+        var password = $('#register-password').val();
+        var password_confirm = $('#register-password-confirm').val();
+        var email = $('#email').val();
+        var city = $('#city').val();
+        var gender = $('#gender').val();
+        var age = $('#age').val();
+
+        if(username == '')
+        {
+            show_new_user_error("empty username");
+            return ;
+        }
+        else if(password == '')
+        {
+            show_new_user_error("empty password");
+            return ;
+        }
+        else if(password_confirm == '')
+        {
+            show_new_user_error("empty password confirm");
+            return ;
+        }
+        else if(password != password_confirm)
+        {
+            show_new_user_error("please confirm your password in twice input");
+            return ;
+        }
+        else if(email == '')
+        {
+            show_new_user_error("empty email");
+            return ;
+        }
+
+        password = CryptoJS.MD5(password).toString();
+
+        $.ajax({
+            url:'/register',
+            type:'post',
+            data:{
+                username:username,
+                password:password,
+                email:email,
+                city:city,
+                gender:gender,
+                age:age
+            },
+            success:function (data) {
+                console.log(data);
+                if( data.error_code == 0 ){
+                    show_new_user_success();
+                    clearAll();
+                }else{
+                    show_new_user_error(data.error_msg);
+                }
+                console.log("new user! ");
+            },
+            error:function (data) {
+                console.log('error');
+            }
+        });
+    }
+
+    function show_new_user_success() {
+        var target = document.getElementById('new_user_success');
+        target.style.visibility = 'visible';
+    }
+
+    function show_new_user_error(msg) {
+        var target = document.getElementById('new_user_error');
+        target.style.visibility = 'visible';
+        target.innerHTML = msg;
+    }
+    function clearAll() {
+        $("#register-username").val('');
+        $("#register-password").val('');
+        $("#register-password-confirm").val('');
+        $("#email").val('');
+        $("#city").val('');
+        $("#gender").val('');
+        $("#age").val('');
+
+    }
+
+</script>
+</html>

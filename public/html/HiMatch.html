@@ -19,6 +19,7 @@
 
     <script src="../js/common-utils.js"></script>
 
+    <script src="../js/HiMatch.js"></script>
 
     <!--<link rel="stylesheet" href="../css/navigator.css">-->
     <script src="../js/jquery-lang.js"></script>
@@ -75,57 +76,23 @@
                     <div class="tab-pane fade in active" id="match_list">
 
                         <!--Mock Matchs-->
-                            <div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">
-                                <div style="background: url('../resource/image/lion.png');height: 150px;width: 300px;background-repeat: repeat;background-size: 300px 150px;border-top-left-radius: 6px;border-top-right-radius: 6px"></div>
-                                <div style="padding: 8px;height: 200px">
-                                    <div style="font-size: 20px;border-bottom: solid 1px #b8bebf">Match on XuanWu Lake</div>
-                                    <div style="font-size: 15px;font-weight: 100">Here comes an interesting match which allows you to chanllenge your self !</div>
-                                </div>
-                                <div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">
-                                    <div style="float: right;">
-                                        <button class="btn btn-primary btn-embossed" style="width: 100px" lang="en">
-                                            Join !
-                                        </button>
-                                        <button class="btn btn-info btn-embossed" onclick="show_match_detail()" lang="en">
-                                            Info
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">
-                            <div style="background: url('../resource/image/match1.jpg');height: 150px;width: 300px;background-repeat: repeat;background-size: 300px 150px;border-top-left-radius: 6px;border-top-right-radius: 6px"></div>
-                            <div style="padding: 8px;height: 200px">
-                                <div style="font-size: 20px;border-bottom: solid 1px #b8bebf">Jogging Night</div>
-                                <div style="font-size: 15px;font-weight: 100">Take nothing but your towel and let's Strengthen our body together !</div>
-                            </div>
-                            <div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">
-                                <div style="float: right;">
-                                    <button class="btn btn-primary btn-embossed" style="width: 100px">
-                                        Join !
-                                    </button>
-                                    <button class="btn btn-default btn-embossed">
-                                        Info
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                            <div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">
-                            <div style="background: url('../resource/image/match2.jpeg');height: 150px;width: 300px;background-repeat: repeat;background-size: 300px 150px;border-top-left-radius: 6px;border-top-right-radius: 6px"></div>
-                            <div style="padding: 8px;height: 200px">
-                                <div style="font-size: 20px;border-bottom: solid 1px #b8bebf">Cycle Track On JiangNing !</div>
-                                <div style="font-size: 15px;font-weight: 100">I don't think you, as a really bicycle lover, should miss this EXCITING match !</div>
-                            </div>
-                            <div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">
-                                <div style="float: right;">
-                                    <button class="btn btn-primary btn-embossed" style="width: 100px">
-                                        Join !
-                                    </button>
-                                    <button class="btn btn-default btn-embossed">
-                                        Info
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                            <!--<div style="width: 300px;height: 400px;border-radius: 6px;background-color: #fafafa;box-shadow: 0 0 2px 1px #b8bebf;float: left;margin: 5px;">-->
+                                <!--<div style="background: url('../resource/image/lion.png');height: 150px;width: 300px;background-repeat: repeat;background-size: 300px 150px;border-top-left-radius: 6px;border-top-right-radius: 6px"></div>-->
+                                <!--<div style="padding: 8px;height: 200px">-->
+                                    <!--<div style="font-size: 20px;border-bottom: solid 1px #b8bebf">Match on XuanWu Lake</div>-->
+                                    <!--<div style="font-size: 15px;font-weight: 100">Here comes an interesting match which allows you to chanllenge your self !</div>-->
+                                <!--</div>-->
+                                <!--<div style="height: 50px;width: 100%;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;padding-right: 10px">-->
+                                    <!--<div style="float: right;">-->
+                                        <!--<button class="btn btn-primary btn-embossed" style="width: 100px" lang="en">-->
+                                            <!--Join !-->
+                                        <!--</button>-->
+                                        <!--<button class="btn btn-info btn-embossed" onclick="show_match_detail()" lang="en">-->
+                                            <!--Info-->
+                                        <!--</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
                     </div>
 
@@ -181,18 +148,18 @@
                                 <div id="info_panel" class="col-lg-8">
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
-                                        <input type="text" class="form-control" placeholder="Match Title">
+                                        <input type="text" class="form-control" placeholder="Match Title" id="match-title-input">
                                     </div>
                                     <div class="input-group"style="margin-top:10px;">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
-                                        <input type="text" class="form-control" placeholder="Match Location">
+                                        <input type="text" class="form-control" placeholder="Match Location" id="match-location_input">
                                     </div>
                                     <div class="input-group"style="margin-top:10px; cursor: pointer">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>
                                         <input type="text" class="form-control" placeholder="Choose date here" id="match-date-input" style="cursor: pointer;color: #000000;background-color: #ffffff">
                                     </div>
                                     <div class="input-group"style="margin-top:10px; cursor: pointer">
-                                        <textarea name="" id="" cols="90" rows="10" class="form-control" style="resize: none" placeholder="Please add a brief description of your match here ..."></textarea>
+                                        <textarea name="" id="match-description-input" cols="90" rows="10" class="form-control" style="resize: none" placeholder="Please add a brief description of your match here ..."></textarea>
                                     </div>
 
 
@@ -202,7 +169,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-embossed">Create!</button>
+                            <button type="button" class="btn btn-primary btn-embossed" onclick="create_match()">Create!</button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -248,10 +215,12 @@
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
-//    $("#match-date-input").datetimepicker({
-//        autoclose:true,
-//        todayBtn:true
-//    });
+//    match_data = {};
+//    match_data.image_url = '../resource/image/match1.jpg';
+//    match_data.match_title = 'test';
+//    match_data.match_intro = 'just test ......';
+//    match_data.id = 1;
+//    generate_match_card('#match_list',match_data);
 
 
     $("#match-date-input").flatpickr();

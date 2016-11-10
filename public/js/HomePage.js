@@ -5,11 +5,107 @@ $('#myTab a').click(function (e) {
     e.preventDefault();
     $(this).tab('show');
 });
-draw_step_bar_chart();
+load_basic_info();
+load_step_bar_chart();
+load_sleep_chart();
+load_weight_chart();
+// draw_step_bar_chart();
 draw_weight_line_chart();
-draw_sleep_chart();
+// draw_sleep_chart(100,78);
 
-function draw_step_bar_chart() {
+function load_basic_info() {
+    var username = getCookie('hiname');
+    var url = '/user/' + username;
+    $.ajax({
+        url:url,
+        type:'get',
+        success:function ( data ) {
+            var info = data[0];
+            document.getElementById('nickname').innerText = info.nickname;
+            var self_intro_label = document.getElementById('user-description');
+            self_intro_label.innerText = ((info.self_intro == null) ? 'So lazy that have nothing to say ..' : info.self_intro);
+            // self_intro_label.innerText = info.self_intro;
+        },
+        error:function ( data ) {
+
+        }
+    });
+}
+
+function load_step_bar_chart() {
+    var username = getCookie('hiname');
+
+    $.ajax({
+        url:'/step_data',
+        type:'get',
+        data:{username:username},
+        success:function (data) {
+            var step_data = [];
+            for (var x in data){
+                var data_item = [];
+                data_item.push(new Date(data[x].sport_date).getTime());
+                data_item.push(parseInt(data[x].steps));
+                step_data.push(data_item);
+            }
+
+            draw_step_bar_chart(step_data);
+        },
+        error:function (data) {
+
+        }
+    });
+}
+
+function load_sleep_chart() {
+    var username = getCookie('hiname');
+    var date = new Date();
+
+    // var current_date = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+    var current_date = date.dateFormat('yyyy-MM-dd');
+    console.log("date:"+current_date);
+    $.ajax({
+        url:'/sleep_data',
+        type:'get',
+        data:{username:username,date:current_date},
+        success:function (data) {
+            console.log(data);
+            if(data.length>0){
+                draw_sleep_chart(parseInt(data[0].sleep_time),parseInt(data[0].sleep_deep));
+            }else{
+                draw_sleep_chart(1000000,0);
+            }
+
+        },
+        error:function (data) {
+
+        }
+    });
+}
+
+function load_weight_chart() {
+    var username = getCookie("hiname");
+
+    $.ajax({
+        url:'/weight_data',
+        type:'get',
+        data:{username:username},
+        success:function (data) {
+            var weight_data = [];
+            for (var x in data){
+                var data_item = [];
+                data_item.push(new Date(data[x].sport_date).getTime());
+                data_item.push(parseFloat(data[x].weight));
+                weight_data.push(data_item);
+            }
+            draw_weight_line_chart(weight_data);
+        },
+        error:function (data) {
+
+        }
+    });
+}
+
+function draw_step_bar_chart(step_data) {
     $(function () {
 
 
@@ -31,7 +127,7 @@ function draw_step_bar_chart() {
                     type: 'column',
                     name: '今日步数',
                     color:'#666666',
-                    data: data,
+                    data: step_data,
                     dataGrouping: {
                         units: [[
                             'week', // unit name
@@ -47,43 +143,33 @@ function draw_step_bar_chart() {
 
 }
 
-function draw_weight_line_chart() {
+function draw_weight_line_chart(weight_data) {
+    console.log(weight_data);
     $(function () {
-        $('#weight_line_chart').highcharts({
-            chart: {
-                type: 'line'
-            },
-            title: {
-                text: '体重变化'
-            },
-            subtitle: {
-                text: 'subtitle'
-            },
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-            yAxis: {
+        // Create the chart
+        $('#weight_line_chart').highcharts('StockChart', {
+                rangeSelector: {
+                    selected: 1
+                },
+
                 title: {
-                    text: '体重(Kg)'
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: true
-                    },
-                    enableMouseTracking: false
-                }
-            },
-            series: [{
-                name: 'Toast',
-                data: [87.0, 86.9, 89.5, 90.5, 91.4, 91.5, 88.2, 86.5, 93.3, 92.3, 93.9, 89.6]
-            }]
-        });
+                    text: 'Weight'
+                },
+
+                series: [{
+                    name: 'weight(kg)',
+                    data: weight_data,
+                    step: true,
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                }]
+            });
+
     });
 }
 
-function draw_sleep_chart() {
+function draw_sleep_chart(total,deep) {
     $(function () {
 
         Highcharts.chart('sleep_data', {
@@ -107,7 +193,7 @@ function draw_sleep_chart() {
                     style: {
                         fontSize: '16px'
                     },
-                    pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
+                    pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}</span>',
                     positioner: function (labelWidth,labelHight,point) {
                         return {
                             x: point.plotX - labelWidth / 2 + 10,
@@ -139,7 +225,7 @@ function draw_sleep_chart() {
 
                 yAxis: {
                     min: 0,
-                    max: 100,
+                    max: total,
                     lineWidth: 0,
                     tickPositions: []
                 },
@@ -162,7 +248,7 @@ function draw_sleep_chart() {
                         color: "#666666",
                         radius: '100%',
                         innerRadius: '100%',
-                        y: 80
+                        y: total
                     }]
                 }, {
                     name: 'Deep Sleep',
@@ -171,7 +257,7 @@ function draw_sleep_chart() {
                         color: "#CCFF66",
                         radius: '75%',
                         innerRadius: '75%',
-                        y: 65
+                        y: deep
                     }]
                 }, {
                     name: 'Quality',
@@ -180,7 +266,7 @@ function draw_sleep_chart() {
                         color: "#0099CC",
                         radius: '50%',
                         innerRadius: '50%',
-                        y: 50
+                        y: deep
                     }]
                 }]
             },

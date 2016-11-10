@@ -11,18 +11,64 @@
 |
 */
 
+Route::get('/',function (){
 
-Route::get('/', function () {
-//    View::addExtendsion('html','php');
-//    return view('welcome');
+   return redirect('sport_data_page');
+});
+
+Route::get('/sport_data_page', function () {
+    \View::addExtension('html','php');
+    return view('HomePage');
+});
+
+Route::get('/matchs_page', function () {
     \View::addExtension('html','php');
     return view('HiMatch');
-//    return "hello Home page";
 });
 
-Route::any('/test',function (){
-    return "hello toast !";
+Route::get('/friend_page', function () {
+    \View::addExtension('html','php');
+    return view('HiFriend');
 });
-Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/login',function (){
+    \View::addExtension('html','php');
+    return view('login');
+});
+
+Route::post('/login','AuthController@user_verify');
+
+Route::post('/register','UserController@create_user');
+
+Route::get('/user/{username}','UserController@get_user_info');
+
+Route::get('/step_data','SportDataController@getStepData');
+
+Route::get('/weight_data','SportDataController@getWeightData');
+
+Route::get('/sleep_data','SportDataController@getSleepData');
+
+Route::get('/height_data','SportDataController@getHeightData');
+
+Route::get('/matchs','MatchController@getAllMatchs');
+
+Route::Post('/match','MatchController@createMatch');
+
+Route::get('/matchs/mine','MatchController@getCreatedMatchByUser');
+
+Route::get('/match/participate','MatchController@getParticipatedMatchsByUser');
+
+Route::post('/match/participate','MatchController@participateMatch');
+
+Route::post('/matchs','MatchController@getAllMatchs');
+
+
+
+Route::get('/test',function (){
+    \View::addExtension('html','php');
+    return view('Test');
+});
+
+//Route::auth();
+//
+//Route::get('/home', 'HomeController@index');

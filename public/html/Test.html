@@ -23,6 +23,7 @@
     <script src="../js/jquery-lang.js"></script>
     <script src="../js/js.cookie.js"></script>
     <script src="../js/language-control.js"></script>
+    <script src="../js/common-utils.js"></script>
     <!--<script src="../js/bootstrap.js"></script>-->
     <!--<link rel="stylesheet" href="../css/bootstrap.css">-->
     <!--<link rel="stylesheet" href="../css/bootstrap-theme.css">-->
@@ -35,12 +36,13 @@
 <button class="btn btn-primary" onclick="change_to_En()">English</button>
 <button class="btn btn-primary" onclick="change_to_Thai()">Thai</button>
 
+<button class="btn btn-warning btn-embossed" onclick="refresh_nav_data()">nav test</button>
 <div id="root"></div>
 </body>
 
 <script>
     generate_nav_bar('#root');
-
+    refresh_nav_data();
 
 </script>
 </html>

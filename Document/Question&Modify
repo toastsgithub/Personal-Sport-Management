@@ -1,0 +1,2 @@
+M1:XCRFToken验证一直没有通过,也没有找到怎么在ajax请求中提交Token,故索性关闭了验证Token的中间件服务
+路径:app/Http/Kernel.php#line_31
