@@ -142,3 +142,14 @@ Date.prototype.dateFormat=function(fmt) {
     }
     return fmt;
 }
+
+
+function setDisabled(node) {
+    node.className += ' disabled';
+}
+
+function clearDisabled(node){
+    var origin_classname = node.className;
+    origin_classname = origin_classname.substring(0,origin_classname.length - 8);
+    node.className = origin_classname;
+}

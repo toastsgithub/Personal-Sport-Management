@@ -63,7 +63,7 @@ class MatchController extends Controller{
         return $return_data;
     }
 
-    public function getCreatedMatchByUser(){
+    public function getCreatedMatchsByUser(){
         $username = Input::get('username');
 
         $data = DB::table('matchs')
@@ -81,8 +81,39 @@ class MatchController extends Controller{
         return $data;
     }
 
-    public function getParticipatedMatchByUser(){
+    public function getParticipatedMatchsByUser(){
+        $username = Input::get("username");
 
+        $userID = DB::table('user')
+            ->select("id")
+            ->where("user_name", $username)
+        ->get();
+
+//        dd($userID);
+        $result = DB::table('participate_match')
+            ->join('matchs', 'matchs.id', '=', 'participate_match.match_id')
+            ->join('user', 'participate_match.user_id', '=', 'user.id')
+            ->select(
+                'matchs.id as id',
+                'match_title',
+                'match_location',
+                'match_date',
+                'match_description',
+                'img_url',
+                'originator_id',
+                'user.id as userID'
+                )
+            ->where('user.user_name', $username)
+            ->where('matchs.originator_id', '<>', $userID[0]->id)
+            ->get();
+
+
+//        $result = DB::table('participate_match')
+//            ->join('matchs', 'matchs.id', '=', 'participate_match.match_id')
+//            ->join('user', 'participate_match.user_id', '=', 'user.id')
+//            ->get();
+//        dd($result);
+        return $result;
     }
 
     public function participateMatch(){
@@ -93,7 +124,16 @@ class MatchController extends Controller{
                 "match_id"=>$match_id,
                 "user_id"=>$user_id
             ]);
+        return array('result'=>$result);
+    }
+
+    public function getMatchInfoById(){
+        $match_id = Input::get('match_id');
+        $result = DB::table('matchs')
+            ->where('id', $match_id)
+            ->get();
         return $result;
     }
+
 
 }

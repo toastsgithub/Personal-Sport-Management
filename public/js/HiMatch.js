@@ -2,7 +2,8 @@
  * Created by duanzhengmou on 10/11/16.
  */
 load_all_matchs();
-
+load_participated_match();
+load_created_match();
 
 function load_all_matchs() {
     $.ajax({
@@ -18,6 +19,55 @@ function load_all_matchs() {
                 match_data.image_url = data[x].img_url;
                 match_data.participated = data[x].participated;
                 generate_match_card('#match_list',match_data);
+            }
+        },
+        error:function (data) {
+            //
+        }
+    });
+}
+
+function load_participated_match(){
+    var username = getCookie("hiname");
+    $.ajax({
+        url:'/match/participate',
+        data:{username: username},
+        type:'get',
+        success:function (data) {
+
+            for (var x in data){
+                var match_data = {};
+                match_data.match_title = data[x].match_title;
+                match_data.match_id = data[x].id;
+                match_data.match_intro = data[x].match_description;
+                match_data.image_url = data[x].img_url;
+                match_data.participated = data[x].participated;
+                generate_match_info_card('#match_participated',match_data);
+            }
+        },
+        error:function (data) {
+            //
+        }
+    });
+
+}
+
+function load_created_match() {
+    var username = getCookie("hiname");
+    $.ajax({
+        url:'/match/mine',
+        type:'get',
+        data:{username:username},
+        success:function (data) {
+
+            for (var x in data){
+                var match_data = {};
+                match_data.match_title = data[x].match_title;
+                match_data.match_id = data[x].id;
+                match_data.match_intro = data[x].match_description;
+                match_data.image_url = data[x].img_url;
+                match_data.participated = data[x].participated;
+                generate_mine_match_card('#match_created',match_data);
             }
         },
         error:function (data) {
@@ -72,19 +122,25 @@ function create_match() {
     });
 }
 
-function participate_match(match_id) {
+function participate_match(event, match_id) {
+    // event.srcElement.className +=' disabled';
     var user_id = getCookie('hinameid');
-    // console.log("participate : "+match_id);
-
+    console.log("participate : "+match_id);
+    setDisabled(event.srcElement);
     $.ajax({
         url:'/match/participate',
         type:'post',
         data:{user_id:user_id,match_id:match_id},
         success:function (data) {
+            // clearDisabled(event.srcElement);
+            window.location.reload();
             console.log(data)
         },
         error:function (data) {
-            
+            // window.location.reload();
+            console.log('error');
+            console.log(data);
+            // clearDisabled(event.srcElement);
         }
     });
 }

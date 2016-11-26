@@ -54,13 +54,13 @@ Route::get('/matchs','MatchController@getAllMatchs');
 
 Route::Post('/match','MatchController@createMatch');
 
-Route::get('/matchs/mine','MatchController@getCreatedMatchByUser');
+Route::get('/match/mine','MatchController@getCreatedMatchsByUser');
 
 Route::get('/match/participate','MatchController@getParticipatedMatchsByUser');
 
 Route::post('/match/participate','MatchController@participateMatch');
 
-Route::post('/matchs','MatchController@getAllMatchs');
+Route::get('/match/info','MatchController@getMatchInfoById');
 
 
 

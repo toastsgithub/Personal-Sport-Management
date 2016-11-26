@@ -19,7 +19,7 @@
 
     <script src="../js/common-utils.js"></script>
 
-    <script src="../js/HiMatch.js"></script>
+
 
     <!--<link rel="stylesheet" href="../css/navigator.css">-->
     <script src="../js/jquery-lang.js"></script>
@@ -39,6 +39,9 @@
     <script src="../js/file_input/fileinput.min.js"></script>
     <link rel="stylesheet" href="../js/file_input/fileinput.min.css">
     <link rel="stylesheet" href="../js/file_input/themes/fa/theme.js">
+
+    <!--fontawesome-->
+    <script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>
 </head>
 <body>
     <div class="" id="navigator">
@@ -105,24 +108,7 @@
 
                         <div class="tab-content">
                             <div class="tab-pane fade in active " id="match_participated">
-                                <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
-                                    <a class="media-left media-middle" href="#">
-                                        <img src="../resource/image/lion.png" alt="..." class="my-match-img">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
-                                        ...
-                                    </div>
-                                </div>
-                                <div class="media" style="border: solid 1px #dddddd;border-radius: 5px;">
-                                    <a class="media-left media-middle" href="#">
-                                        <img src="../resource/image/lion.png" alt="..." class="my-match-img">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Middle aligned media Middle aligned media Middle aligned media Middle aligned media</h4>
-                                        ...
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="tab-pane fade in " id="match_created">
 
@@ -192,10 +178,15 @@
                             <img src="../resource/image/lion.png" alt="..." style="width: 300px">
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading">Match on XuanWu Lake</h4>
-                            <div>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
-                            <div><span class="glyphicon glyphicon-time"></span> Date: <span id="match_time">2016-10-17</span></div>
-                            <div><span class="glyphicon glyphicon-road"></span> Place: <span id="match_place">Xuan Wu Lake</span></div>
+
+                            <h4 class="media-heading" id="match_title">[Title loading...]</h4>
+                            <div id="match_description">[Description loading...]</div>
+                            <div id="loading">
+                                <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <div><span class="glyphicon glyphicon-time"></span> Date: <span id="match_date">[Date]</span></div>
+                            <div><span class="glyphicon glyphicon-road"></span> Place: <span id="match_location">[Position]</span></div>
                         </div>
                     </div>
                 </div>
@@ -211,10 +202,12 @@
 </body>
 
 <script src="../js/flat-component-generator.js"></script>
+<script src="../js/HiMatch.js"></script>
 <script>
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
+
 //    match_data = {};
 //    match_data.image_url = '../resource/image/match1.jpg';
 //    match_data.match_title = 'test';
@@ -226,13 +219,44 @@
     $("#match-date-input").flatpickr();
     generate_nav_bar('#navigator');
     $("#pic_upload").fileinput({theme:'fa'});
-    function show_match_detail() {
+    function show_match_detail(match_id) {
+
+        var local_match_id = 1;
+
+
+
         $('#match-detail').modal();
+        $.ajax({
+            url:'/match/info',
+            type:'get',
+            data:{match_id:match_id},
+            success:function (data) {
+                document.getElementById('loading').style.visibility = 'hidden';
+                var title = data[0].match_title;
+                var description = data[0].match_description;
+                var date = data[0].match_date;
+                var location = data[0].match_location;
+                document.getElementById('match_title').innerHTML = title;
+                document.getElementById('match_description').innerHTML = description;
+                document.getElementById('match_date').innerHTML = date;
+                document.getElementById('match_location').innerHTML = location;
+            },
+            error:function (data) {
+                
+            }
+        });
+
+
     }
     function show_match_create_modal() {
         $("#create_match").modal({
             backdrop:"static"
         });
+    }
+
+    function init_match_info_board(){
+        document.getElementById('loading').style.visibility = 'visible';
+        // todo
     }
 
 </script>
