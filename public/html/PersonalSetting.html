@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Setting</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
+
+    <!--<script src="//cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.js"></script>-->
+    <!--<link href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">-->
+    <script src="../js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/flat-ui.min.css">
+
+    <script src="../js/common-utils.js"></script>
+
+    <!--<link rel="stylesheet" href="../css/navigator.css">-->
+    <script src="../js/jquery-lang.js"></script>
+    <script src="../js/js.cookie.js"></script>
+    <script src="../js/language-control.js"></script>
+
+    <!--<link rel="stylesheet" href="../css/HiMatch.css">-->
+
+    <!--date picker-->
+    <script src="../js/date_picker/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="../js/date_picker/bootstrap-datetimepicker.min.css">
+
+    <script src="../js/date_picker/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="../js/date_picker/flatpickr.min.css">
+
+    <!--File input-->
+    <script src="../js/file_input/fileinput.min.js"></script>
+    <link rel="stylesheet" href="../js/file_input/fileinput.min.css">
+    <link rel="stylesheet" href="../js/file_input/themes/fa/theme.js">
+
+    <!--fontawesome-->
+    <script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>
+    <script src="../js/PersonalSetting.js"></script>
+</head>
+<body>
+    <div id="navigator"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-ms-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">个人信息</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">&nbsp&nbsp account</span>
+                            <input id="info_username" type="text" class="form-control" readonly="readonly" placeholder="">
+                        </div>
+
+                        <div class="input-group input-group-sm" style="margin-top: 10px">
+                            <span class="input-group-addon">nickname</span>
+                            <input id="info_nickname" type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="input-group input-group-sm" style="margin-top: 10px">
+                            <span class="input-group-addon">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspintro</span>
+                            <input id="info_intro" type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="input-group input-group-sm" style="margin-top: 10px">
+                            <span class="input-group-addon">&nbsp&nbsp&nbsp&nbspgender</span>
+                            <input id="info_gender" type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="input-group input-group-sm" style="margin-top: 10px">
+                            <span class="input-group-addon">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspage</span>
+                            <input id="info_age" type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="input-group input-group-sm" style="margin-top: 10px">
+                            <span class="input-group-addon">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspcity</span>
+                            <input id="info_city" type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <button class="btn btn-primary btn-embossed" style="margin-top: 10px;width: 100%">Save</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer"></footer>
+</body>
+<script src="../js/flat-component-generator.js"></script>
+<script>
+    generate_nav_bar("#navigator");
+    check_login();
+    document.getElementById("footer").appendChild(generate_footer());
+</script>
+</html>

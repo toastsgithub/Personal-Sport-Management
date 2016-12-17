@@ -189,6 +189,9 @@
                             <div><span class="glyphicon glyphicon-road"></span> Place: <span id="match_location">[Position]</span></div>
                         </div>
                     </div>
+
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary btn-embossed">Join now !</button>
@@ -201,23 +204,16 @@
     <footer id="footer"></footer>
 </body>
 
-<script src="../js/flat-component-generator.js"></script>
 <script src="../js/HiMatch.js"></script>
+<script src="../js/flat-component-generator.js"></script>
 <script>
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
 
-//    match_data = {};
-//    match_data.image_url = '../resource/image/match1.jpg';
-//    match_data.match_title = 'test';
-//    match_data.match_intro = 'just test ......';
-//    match_data.id = 1;
-//    generate_match_card('#match_list',match_data);
-
-
     $("#match-date-input").flatpickr();
     generate_nav_bar('#navigator');
+    check_login();
     $("#pic_upload").fileinput({theme:'fa'});
     function show_match_detail(match_id) {
 
@@ -240,6 +236,7 @@
                 document.getElementById('match_description').innerHTML = description;
                 document.getElementById('match_date').innerHTML = date;
                 document.getElementById('match_location').innerHTML = location;
+
             },
             error:function (data) {
                 

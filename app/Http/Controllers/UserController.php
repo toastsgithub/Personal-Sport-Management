@@ -59,4 +59,59 @@ class UserController extends Controller{
             ->get();
         return $data;
     }
+
+    public function get_personal_info(){
+        $user_id = Input::get('user_id');
+
+        $data = DB::table('user')
+            ->select(
+                'user_name as username',
+                'nickname',
+                'self_intro',
+                'user_type',
+                'gender',
+                'age',
+                'city')
+            ->where('id',$user_id)
+            ->get();
+        return $data;
+    }
+
+    /**
+     * 获取和传入键值相关的用户,返回用户基本信息和是否已经添加过好友,是(1),否(0)
+     * @return mixed
+     */
+    public function fuzzy_search_by_id(){
+        $key = Input::get('key');
+        $user_id = Input::get('user_id');
+
+        $condition = '%'.$key.'%';
+
+        $result = array();
+        $all_match_user = DB::table('user')
+            ->select(
+                'user_name',
+                'id'
+                )
+            ->where('user.user_name','like',$condition)
+            ->get();
+
+        //获取已经关注过的好友列表
+        $followed = DB::table('following')
+            ->select('following_id')
+            ->where('following.user_id', $user_id)
+            ->get();
+
+        for ($x=0;$x<count($all_match_user);$x++){
+            $followed_index = 0;
+            for ($y=0;$y<count($followed);$y++){
+                if ($followed[$y]->following_id == $all_match_user[$x]->id)
+                    $followed_index = 1;
+            }
+            $all_match_user[$x]->followed = $followed_index;
+        }
+        return $all_match_user;
+    }
+
+
 }

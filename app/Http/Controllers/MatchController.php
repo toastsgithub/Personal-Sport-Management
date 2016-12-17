@@ -81,15 +81,19 @@ class MatchController extends Controller{
         return $data;
     }
 
+    /**
+     * 获取参加了的比赛信息,如果该比赛是自己发起的,isMine = 1
+     * @return mixed
+     */
     public function getParticipatedMatchsByUser(){
         $username = Input::get("username");
+
 
         $userID = DB::table('user')
             ->select("id")
             ->where("user_name", $username)
         ->get();
 
-//        dd($userID);
         $result = DB::table('participate_match')
             ->join('matchs', 'matchs.id', '=', 'participate_match.match_id')
             ->join('user', 'participate_match.user_id', '=', 'user.id')
@@ -104,15 +108,17 @@ class MatchController extends Controller{
                 'user.id as userID'
                 )
             ->where('user.user_name', $username)
-            ->where('matchs.originator_id', '<>', $userID[0]->id)
+            ->where('participate_match.user_id', $userID[0]->id)
             ->get();
 
 
-//        $result = DB::table('participate_match')
-//            ->join('matchs', 'matchs.id', '=', 'participate_match.match_id')
-//            ->join('user', 'participate_match.user_id', '=', 'user.id')
-//            ->get();
-//        dd($result);
+        foreach ($result as $x){
+            if($x->originator_id == $x->userID)
+                $x->isMine = 1;
+            else
+                $x->isMine = 0;
+        }
+
         return $result;
     }
 
@@ -135,5 +141,70 @@ class MatchController extends Controller{
         return $result;
     }
 
+    /**
+     * 删除自己发起的活动,同时也将所有人从该任务的参与列表中删除
+     * @return array
+     */
+    public function dismissMatch(){
+
+//        $user_id = Input::get('user_id');
+        $match_id = Input::get('match_id');
+
+        $result = DB::table('matchs')
+            ->where('id',$match_id)
+//            ->where('originator_id',$user_id)
+            ->delete();
+
+        $delete_participator = DB::table('participate_match')
+            ->where('match_id',$match_id)
+            ->delete()
+        ;
+
+        return array('result'=>$result);
+    }
+
+    public function report(){
+        $reason = Input::get('reason');
+        $user_id = Input::get('user_id');
+        $match_id = Input::get('match_id');
+
+        $result = DB::table('matchs')
+            ->where('id',$match_id)
+            ->update([
+                'reported'=>1,
+                'reporter_id'=>$user_id,
+                'report_reason'=>$reason
+            ]);
+
+        return array('result'=>$result);
+    }
+
+    public function getReport(){
+
+        $result = DB::table('matchs')
+            ->where('reported',1)
+            ->get()
+        ;
+        return $result;
+    }
+
+    /**
+     * 将被举报的比赛审核通过,重置审核状态
+     * @return array
+     */
+    public function resetReport(){
+
+        $match_id = Input::get('match_id');
+
+//        return array('result'=>$match_id);
+        $result = DB::table('matchs')
+
+            ->where('id',$match_id)
+            ->update([
+                'reported'=>0
+            ]);
+
+        return array('result'=>$result);
+    }
 
 }

@@ -41,7 +41,7 @@ function load_participated_match(){
                 match_data.match_id = data[x].id;
                 match_data.match_intro = data[x].match_description;
                 match_data.image_url = data[x].img_url;
-                match_data.participated = data[x].participated;
+                match_data.isMine = data[x].isMine;
                 generate_match_info_card('#match_participated',match_data);
             }
         },
@@ -83,6 +83,7 @@ function create_match() {
     var match_description = $("#match-description-input").val();
     var img_url = '../resource/image/match1.jpg';//default
     var oringinator_id = getCookie('hinameid');
+
 
     // console.log(
     //     "\ntitle:"+ match_title+
@@ -141,6 +142,40 @@ function participate_match(event, match_id) {
             console.log('error');
             console.log(data);
             // clearDisabled(event.srcElement);
+        }
+    });
+}
+
+function dismiss_my_match(match_id){
+    // var user_id = getCookie('hinameid');
+
+    $.ajax({
+        url:'/match/dismiss',
+        type:'post',
+        data:{match_id:match_id},
+        success:function (data) {
+
+            location.reload();
+        },
+        error:function (data) {
+            console.log('dismiss ajax error');
+        }
+    });
+}
+
+function report(match_id) {
+    var user_id = getCookie('hinameid');
+    var reason = 'some reason';
+
+    $.ajax({
+        url:'/match/report',
+        type:'post',
+        data:{reason:reason,user_id:user_id,match_id:match_id},
+        success:function (data) {
+
+        },
+        error:function (data) {
+
         }
     });
 }

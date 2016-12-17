@@ -28,6 +28,13 @@
     <!--<link rel="stylesheet" href="../css/bootstrap.css">-->
     <!--<link rel="stylesheet" href="../css/bootstrap-theme.css">-->
 
+    <!--date picker-->
+    <!--<script src="../js/date_picker/bootstrap-datetimepicker.min.js"></script>-->
+    <!--<link rel="stylesheet" href="../js/date_picker/bootstrap-datetimepicker.min.css">-->
+
+    <script src="../js/date_picker/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="../js/date_picker/flatpickr.min.css">
+
 </head>
 <body>
 
@@ -38,11 +45,34 @@
 
 <button class="btn btn-warning btn-embossed" onclick="refresh_nav_data()">nav test</button>
 <div id="root"></div>
+
+
+    <input type="text" id="date_picker" style="visibility: hidden;" >
+
+
 </body>
 
 <script>
     generate_nav_bar('#root');
     refresh_nav_data();
 
+    $("#date_picker").flatpickr(
+            {inline:true}
+    );
+//    flatpickr('#date_picker',{
+//        inline:true
+//    });
+    var btn = $('<button>click</button>');
+
+
+    btn.click(function () {
+        alert("click me");
+        console.log(this);
+        console.log("-->"+$(this));
+        $(this).addClass("aaaa");
+        $(this).addClass("helloworld");
+    });
+    console.log(btn);
+    $('#root').append(btn);
 </script>
 </html>

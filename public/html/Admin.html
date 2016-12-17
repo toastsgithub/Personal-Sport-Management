@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
+
+    <!--<script src="//cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.js"></script>-->
+    <!--<link href="//cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.css" rel="stylesheet">-->
+    <script src="../js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/flat-ui.min.css">
+
+    <script src="../js/common-utils.js"></script>
+
+    <!--&lt;!&ndash;<link rel="stylesheet" href="../css/navigator.css">&ndash;&gt;-->
+    <!--<script src="../js/jquery-lang.js"></script>-->
+    <!--<script src="../js/js.cookie.js"></script>-->
+    <!--<script src="../js/language-control.js"></script>-->
+
+    <!--&lt;!&ndash;<link rel="stylesheet" href="../css/HiMatch.css">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;date picker&ndash;&gt;-->
+    <!--<script src="../js/date_picker/bootstrap-datetimepicker.min.js"></script>-->
+    <!--<link rel="stylesheet" href="../js/date_picker/bootstrap-datetimepicker.min.css">-->
+
+    <!--<script src="../js/date_picker/flatpickr.min.js"></script>-->
+    <!--<link rel="stylesheet" href="../js/date_picker/flatpickr.min.css">-->
+
+    <!--&lt;!&ndash;File input&ndash;&gt;-->
+    <!--<script src="../js/file_input/fileinput.min.js"></script>-->
+    <!--<link rel="stylesheet" href="../js/file_input/fileinput.min.css">-->
+    <!--<link rel="stylesheet" href="../js/file_input/themes/fa/theme.js">-->
+
+    <!--&lt;!&ndash;fontawesome&ndash;&gt;-->
+    <!--<script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>-->
+    <!--<script src="../js/PersonalSetting.js"></script>-->
+
+    <script src="../js/admin.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-embossed" role="navigation">
+    <div class="navbar-header" style="">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+            <span class="sr-only">Toggle navigation</span>
+            </button>
+        <a class="navbar-brand" href="#">Hi High</a>
+        </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="" lang="en">Admin</a></li>
+            <!--<li><a href="/matchs_page" lang="en">Playground</a></li>-->
+            <!--<li><a href="/friend_page" lang="en">Friends</a></li>-->
+            </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="user_state"><span id="nav_user">login</span><b class="caret"></b></a>
+                <span class="dropdown-arrow"></span>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="logout()">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="margin-top: 50px">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6" id="basic" style="">
+                <div id="report">
+
+                    <!--<div class="panel panel-default">-->
+                        <!--<div class="panel-heading">-->
+                            <!--<h3 class="panel-title" id="title">[title]</h3>-->
+                        <!--</div>-->
+                        <!--<div class="panel-body">-->
+                            <!--<p id="description"><span class="label label-primary">Description</span>[description]</p>-->
+                            <!--<p id="date"><span class="label label-primary">Date</span>[date]</p>-->
+                            <!--<p id="location"><span class="label label-primary">Location</span>[location]</p>-->
+                            <!--<p id="reporter"><span class="label label-primary">Reporter</span>[reporter]</p>-->
+                            <!--<div>-->
+                                <!--<button class="btn btn-primary btn-embossed">pass</button>-->
+                                <!--<button class="btn btn-danger btn-embossed">delete</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6" id="user_num" style="background-color: chocolate">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

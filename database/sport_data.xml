@@ -1,0 +1,23 @@
+<datas>
+
+	<data>
+		<userId>100</userId>
+		<sportDate>2016-12-03</sportDate>
+		<sleepTime>300</sleepTime>
+		<weight>80</weight>
+		<height>175</height>
+		<steps>10078</steps>
+		<sleepDeep>200</sleepDeep>
+	</data>
+
+	<data>
+		<userId>101</userId>
+		<sportDate>2016-12-04</sportDate>
+		<sleepTime>300</sleepTime>
+		<weight>85</weight>
+		<height>180</height>
+		<steps>23078</steps>
+		<sleepDeep>200</sleepDeep>
+	</data>
+
+</datas>

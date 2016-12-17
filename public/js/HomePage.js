@@ -170,6 +170,7 @@ function draw_weight_line_chart(weight_data) {
 }
 
 function draw_sleep_chart(total,deep) {
+    console.log("total:"+total+"deep:"+deep);
     $(function () {
 
         Highcharts.chart('sleep_data', {

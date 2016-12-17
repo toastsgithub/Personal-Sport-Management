@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Support\Facades\DB;
 
 Route::get('/',function (){
 
@@ -35,6 +36,19 @@ Route::get('/login',function (){
     \View::addExtension('html','php');
     return view('login');
 });
+
+Route::get('/personal',function (){
+    \View::addExtension('html','php');
+    return view('PersonalSetting');
+});
+
+Route::get('/admin',function (){
+    \View::addExtension('html','php');
+    return view('Admin');
+});
+
+Route::post('/import','SportDataController@addData');
+Route::post('/importXML','SportDataController@addXMLData');
 
 Route::post('/login','AuthController@user_verify');
 
@@ -62,7 +76,42 @@ Route::post('/match/participate','MatchController@participateMatch');
 
 Route::get('/match/info','MatchController@getMatchInfoById');
 
+Route::post('/match/dismiss','MatchController@dismissMatch');
 
+Route::post('/match/report','MatchController@report');
+
+Route::get('/match/report','MatchController@getReport');
+
+Route::post('/match/pass','MatchController@resetReport');
+
+
+Route::get('/friend/search','UserController@fuzzy_search_by_id');
+
+Route::get('/friend/following','FriendController@getFollowingUser');
+
+Route::get('/friend/follower','FriendController@getFollowerUser');
+
+Route::post('/friend/follow','FriendController@followUser');
+
+Route::post('/friend/unfollow','FriendController@unFollowUser');
+
+Route::get('/friend/moments','FriendController@getMomentsById');
+
+Route::post('/friend/moments','FriendController@publicMoment');
+
+Route::get('/personal/info','UserController@get_personal_info');
+
+Route::post('/personal/info','UserController@set_personal_info');
+
+
+
+Route::get('testDB',function (){
+
+    $name =  'zhengmou';
+    $result = 'duan' + $name;
+    echo $result;
+//    return $result;
+});
 
 Route::get('/test',function (){
     \View::addExtension('html','php');

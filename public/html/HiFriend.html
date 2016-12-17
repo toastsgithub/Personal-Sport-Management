@@ -19,14 +19,17 @@
 
     <script src="https://use.fontawesome.com/bfb3bf8a2a.js"></script>
 
+    <script src="../js/time_line/jquery.eeyellow.Timeline.js"></script>
+    <link rel="stylesheet" href="../js/time_line/jquery.eeyellow.Timeline.css">
+
     <script src="../js/common-utils.js"></script>
 
     <script src="../js/jquery-lang.js"></script>
     <script src="../js/js.cookie.js"></script>
     <script src="../js/language-control.js"></script>
-    <script src="../js/HiFriend.js"></script>
 
-    <!--<link rel="stylesheet" href="../css/navigator.css">-->
+
+
 
     <link rel="stylesheet" href="../css/HiFriend.css">
 </head>
@@ -98,6 +101,7 @@
                         <button type="button" class="btn btn-primary btn-embossed" onclick="show_search_friends_dialog()">Search Friends</button>
                         <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab1">Following</button>
                         <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab2">Follower</button>
+                        <button type="button" class="btn btn-default btn-embossed" data-toggle="tab" href="#tab3">Moments</button>
                     </div>
                 </div>
             </div>
@@ -106,48 +110,93 @@
 
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="tab1">
-                        <div class="container-fluid">
+                        <div class="container-fluid" id="following_friend">
 
-                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
-                                <div class="" style="float: left;">
-                                    <div><img src="../resource/image/avatar1.png" alt="..." class="img-circle friend-icon"></div>
-                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;" lang="en">Unfollow</button>
-                                </div>
 
-                                <div style="float: left;" class="">
-                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother</h4></a>
-                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
-                                </div>
-                            </div>
-                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
-                                <div class="" style="float: left;">
-                                    <div><img src="../resource/image/avatar2.png" alt="..." class="img-circle friend-icon"></div>
-                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;"lang="en">Unfollow</button>
-                                </div>
+                            <!--<div id="test_friend_presentation" style="border-radius: 15px;width: 300px;height: 100px;box-shadow:1px 1px 1px 1px #a5acaa;background-color: #ffffff;float: left;margin: 10px">-->
 
-                                <div style="float: left;" class="">
-                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother De Xiaohao1</h4></a>
-                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
-                                </div>
-                            </div>
-                            <div class="" style="height: 130px;border-bottom: solid 1px #dddddd;margin-bottom: 10px;">
-                                <div class="" style="float: left;">
-                                    <div><img src="../resource/image/avatar3.png" alt="..." class="img-circle friend-icon"></div>
-                                    <button class="btn btn-danger btn-embossed" style="font-size: 10px;width: 80px;margin-top: 3px;" lang="en">Unfollow</button>
-                                </div>
+                                <!--<div style="top: 10px;left: 5px;position: relative;float:left;">-->
+                                    <!--<img src="../resource/image/avatar2.png" alt="..." class="img-circle friend-icon">-->
+                                <!--</div>-->
 
-                                <div style="float: left;" class="">
-                                    <a href=""><h4 class="media-heading" style="font-size: 20px">SunHao Brother 3 beta</h4></a>
-                                    <div style="font-size: 15px;float: left;">I am a totally gay...I am a totally gay...I am a totally gay...</div>
-                                </div>
-                            </div>
+                                <!--<div style="float: left;width: 200px;position: relative;left: 7px;top: 8px;height: 60px;" class="">-->
+                                    <!--<a href=""><h4 class="media-heading" style="font-size: 15px;border-bottom: solid 1px #c0c0c0">SunHao Brother 3 beta</h4></a>-->
+                                    <!--<div style="font-size: 12px;float: left;border-bottom: solid 1px #c0c0c0">I am a totally gay...I am a totally gay...I am a totally gay...</div>-->
+                                    <!--<div>-->
+                                        <!--<button class="btn btn-danger btn-embossed btn-xs" style="float: right;position:relative;top: 2px;">Unfollow</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<div id="" style="border-radius: 15px;width: 300px;height: 100px;box-shadow:1px 1px 1px 1px #a5acaa;background-color: #ffffff;float: left;margin: 10px">-->
+
+                                <!--<div style="top: 10px;left: 5px;position: relative;float:left;">-->
+                                    <!--<img src="../resource/image/avatar2.png" alt="..." class="img-circle friend-icon">-->
+                                <!--</div>-->
+
+                                <!--<div style="float: left;width: 200px;position: relative;left: 7px;top: 8px;height: 60px;" class="">-->
+                                    <!--<a href=""><h4 class="media-heading" style="font-size: 15px;border-bottom: solid 1px #c0c0c0">SunHao Brother 3 beta</h4></a>-->
+                                    <!--<div style="font-size: 12px;float: left;border-bottom: solid 1px #c0c0c0">I am a totally gay...I am a totally gay...I am a totally gay...</div>-->
+                                    <!--<div>-->
+                                        <!--<button class="btn btn-danger btn-embossed btn-xs" style="float: right;position:relative;top: 2px;">Unfollow</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
 
                         </div>
                     </div>
 
                     <div class="tab-pane fade in" id="tab2">
-                        Oops  !  Seems that you don't have any friends ~
+                        <div id="follower" class="container-fluid">
+
+                        </div>
+
                     </div>
+
+                    <div class="tab-pane fade in" id="tab3">
+                        <div id="moments" class="container-fluid">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="VivaTimeline">
+                                            <dl id="moments_list">
+                                                <!--<dt>2016 3月</dt>-->
+                                                <dd class="pos-left clearfix">
+                                                    <div class="circ"></div>
+                                                    <!--<div class="time">2016-11-30</div>-->
+                                                    <div class="events">
+                                                        <div class="events-header">Hi High</div>
+                                                        <div class="events-body">
+
+                                                            <div>
+                                                                Hi Toast 早上好
+                                                            </div>
+
+                                                            <div>
+                                                                <textarea name="" id="moment_input" placeholder="say something" style="resize: none;height: 100px;width: 100%;font-size: 15px"></textarea>
+                                                            </div>
+
+                                                            <div>
+                                                                <button style="float: right;" class="btn btn-primary btn-embossed btn-sm" onclick="publicsh_moment()"><span class="glyphicon glyphicon-pencil" ></span> Launch</button>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="events-footer">
+                                                            10:38:44
+                                                        </div>
+                                                    </div>
+                                                </dd>
+
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -160,15 +209,13 @@
                         </div>
                         <div class="modal-body">
                             <div class="input-group">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="search_friend_input">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default btn-primary" type="button">search</button>
+                                    <button class="btn btn-default btn-primary" type="button" onclick="search_friend()">search</button>
                                 </span>
                             </div>
-                            <div class="search_result">
-                                <div><a href="">John Smith(search result test)</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
-                                <div><a href="">Laurence</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
-                                <div><a href="">Steve Jobs</a><span><a href=""><span class="fa fa-plus-circle"></span>add</a></span></div>
+                            <div class="search_result" id="search_result">
+
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -192,14 +239,7 @@
                 </div>
                 <div class="modal-body">
                     hello world
-                    <!--<div class="container-fluid">-->
-                    <!--<div class="row">-->
-                    <!--<div id="friend_avatar" class="col-lg-4">-->
-                    <!--<img src="../resource/image/avatar1.png" alt="" class="img-circle" style="width: 100px">-->
-                    <!--</div>-->
-                    <!--<div id="friend_detail" class="col-lg-8"></div>-->
-                    <!--</div>-->
-                    <!--</div>-->
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -209,11 +249,13 @@
     </div>
 </body>
 <script src="../js/flat-component-generator.js"></script>
+<script src="../js/HiFriend.js"></script>
 <script>
 
     //界面样板元素注入方法调用
     document.getElementById("footer").appendChild(generate_footer());
     generate_nav_bar('#navigator');
-
+    check_login();
+    $('.vivatimeline').vivaTimeline();
 </script>
 </html>
