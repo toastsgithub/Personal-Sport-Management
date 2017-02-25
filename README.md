@@ -66,7 +66,7 @@
 # 操作示例
 ## 1.注册
 
-![1](http://olxa5noyp.bkt.clouddn.com/pasted-image.png)
+![1](https://raw.githubusercontent.com/toastsgithub/Personal-Sport-Management/master/docImg/pasted-image.png)
 
 ## 2.登录
 
@@ -74,15 +74,15 @@
 
 ## 3.个人主页-运动信息查看
 
-![3](http://olxa5noyp.bkt.clouddn.com/pasted-image-3.png)
+![3](https://raw.githubusercontent.com/toastsgithub/Personal-Sport-Management/master/docImg/pasted-image-3.png)
 
 ## 4.比赛列表查看
 
-![4](http://olxa5noyp.bkt.clouddn.com/pasted-image-4.png)
+![4](https://raw.githubusercontent.com/toastsgithub/Personal-Sport-Management/master/docImg/pasted-image-4.png)
 
 ## 5.发起一场比赛
 
-![5](http://olxa5noyp.bkt.clouddn.com/pasted-image-5.png)
+![5](https://raw.githubusercontent.com/toastsgithub/Personal-Sport-Management/master/docImg/pasted-image-5.png)
 
 ## 6.查看我创建的比赛
 
@@ -102,7 +102,7 @@
 
 ## 10.查看动态和发起动态
 
-![10](http://olxa5noyp.bkt.clouddn.com/pasted-image-10.png)
+![10](https://raw.githubusercontent.com/toastsgithub/Personal-Sport-Management/master/docImg/pasted-image-10.png)
 
 ## 11.切换语言
 
