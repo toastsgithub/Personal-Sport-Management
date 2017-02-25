@@ -74,45 +74,45 @@
 
 ## 3.个人主页-运动信息查看
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-3.png)
+![3](http://olxa5noyp.bkt.clouddn.com/pasted-image-3.png)
 
 ## 4.比赛列表查看
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-4.png)
+![4](http://olxa5noyp.bkt.clouddn.com/pasted-image-4.png)
 
 ## 5.发起一场比赛
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-5.png)
+![5](http://olxa5noyp.bkt.clouddn.com/pasted-image-5.png)
 
 ## 6.查看我创建的比赛
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-6.png)
+![6](http://olxa5noyp.bkt.clouddn.com/pasted-image-6.png)
 
 ## 7.查看我参加的比赛
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-7.png)
+![7](http://olxa5noyp.bkt.clouddn.com/pasted-image-7.png)
 
 ## 8.查看关注我的人和我关注的人
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-8.png)
+![8](http://olxa5noyp.bkt.clouddn.com/pasted-image-8.png)
 
 ## 9.搜索好友
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-9.png)
+![9](http://olxa5noyp.bkt.clouddn.com/pasted-image-9.png)
 
 ## 10.查看动态和发起动态
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-10.png)
+![10](http://olxa5noyp.bkt.clouddn.com/pasted-image-10.png)
 
 ## 11.切换语言
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-11.png)
+![11](http://olxa5noyp.bkt.clouddn.com/pasted-image-11.png)
 
 ## 12.个人设置
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-12.png)
+![12](http://olxa5noyp.bkt.clouddn.com/pasted-image-12.png)
 
 ## 13.管理员处理举报
 
-![2](http://olxa5noyp.bkt.clouddn.com/pasted-image-13.png)
+![13](http://olxa5noyp.bkt.clouddn.com/pasted-image-13.png)
 
